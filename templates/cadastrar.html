@@ -1,0 +1,20 @@
+{% extends 'base.html' %} {% block content %}
+<h1>{% block title %} Cadastrar Usuario {% endblock %}</h1>
+<form method="post">
+    <label for="title">Email:</label>
+    <br>
+    <input type="text" name="email" placeholder="Email" value="{{ request.form['email'] }}"></input>
+    <br>
+
+    <label for="content">Nome:</label>
+    <br>
+    <input type="text" name="nome" placeholder="Nome" value="{{ request.form['nome'] }}"></input>
+    <br>
+
+    <label for="content">Senha:</label>
+    <br>
+    <input type="text" name="senha" placeholder="Senha" value="{{ request.form['senha'] }}"></input>
+    <br>
+    <button type="submit">Submit</button>
+</form>
+{% endblock %}
