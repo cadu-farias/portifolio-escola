@@ -1,20 +1,28 @@
 {% extends 'base.html' %} {% block content %}
-<h1>{% block title %} Cadastrar Usuario {% endblock %}</h1>
-<form method="post">
-    <label for="title">Email:</label>
-    <br>
-    <input type="text" name="email" placeholder="Email" value="{{ request.form['email'] }}"></input>
-    <br>
+<section class="page-section portfolio" id="portfolio">
 
-    <label for="content">Nome:</label>
-    <br>
-    <input type="text" name="nome" placeholder="Nome" value="{{ request.form['nome'] }}"></input>
-    <br>
-
-    <label for="content">Senha:</label>
-    <br>
-    <input type="text" name="senha" placeholder="Senha" value="{{ request.form['senha'] }}"></input>
-    <br>
-    <button type="submit">Submit</button>
-</form>
+    <div class="container">
+        <div class="card-body">
+        <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0 mt-4">{% block title %} Cadastrar Usuario {% endblock %}</h2>
+            <form method="post">
+                <label  for="title">Email:</label>
+                <br>
+                <input class="form-control" type="text" name="email" placeholder="Email" value="{{ request.form['email'] }}"></input>
+                <br>
+            
+                <label  for="content">Nome:</label>
+                <br>
+                <input class="form-control" type="text" name="nome" placeholder="Nome" value="{{ request.form['nome'] }}"></input>
+                <br>
+            
+                <label  for="content">Senha:</label>
+                <br>
+                <input class="form-control" type="password" name="senha" placeholder="Senha" value="{{ request.form['senha'] }}"></input>
+                <br>
+                
+                <button class="btn btn-success" type="submit">Enviar</button>
+        </form>
+    </div>
+    </div>
+</section>
 {% endblock %}

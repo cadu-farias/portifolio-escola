@@ -1,15 +1,21 @@
 {% extends 'base.html' %} {% block content %}
-<h1>{% block title %} Add a New Post {% endblock %}</h1>
-<form method="post">
-    <label for="title">Title</label>
-    <br>
-    <input type="text" name="title" placeholder="Post title" value="{{ request.form['title'] }}"></input>
-    <br>
-
-    <label for="content">Post Content</label>
-    <br>
-    <textarea name="content" placeholder="Post content" rows="15" cols="60">{{ request.form['content'] }}</textarea>
-    <br>
-    <button type="submit">Submit</button>
-</form>
+<section class="page-section portfolio" id="portfolio">
+    <div class="container">
+        <div class="card-body">
+            <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0 mt-4">{% block title %} Adicionar nova postagem {% endblock %}</h2>
+                <form method="post">
+                    <label for="title">Titulo</label>
+                    <br>
+                    <input class="form-control" type="text" name="title" placeholder="Post title" value="{{ request.form['title'] }}"></input>
+                    <br>
+                
+                    <label for="content">Conteúdo da postagem</label>
+                    <br>
+                    <textarea class="form-control" name="content" placeholder="Post content" rows="15" cols="60">{{ request.form['content'] }}</textarea>
+                    <br>
+                    <button class="btn btn-success" type="submit">Cadastrar</button>
+                </form>
+        </div>
+    </div>
+</section>
 {% endblock %}

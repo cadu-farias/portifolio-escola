@@ -1,0 +1,24 @@
+{% extends 'base.html' %} {% block content %}
+<section class="page-section portfolio" id="portfolio">
+    {% if posts != [] %}
+    <h1 class="page-section-heading text-center text-uppercase text-secondary mb-2 mt-4">{% block title %} Postagem {% endblock %}</h1>
+    {% else %}
+    <h1 class="page-section-heading text-center text-uppercase text-secondary mb-2 mt-4"> Sem postagem no momento </h1>
+    {% endif %}
+    {% for post in posts %} 
+    <div class='container'>
+        <div class="card mt-4 mb-4">
+            <div class="card-body shadow">
+                    <p>{{ post['created'] }}</p>
+                    <h2>{{ post['title'] }}</h2>
+                    <p>{{ post['content'] }}</p>
+                    {% if session['email'] %}
+                    <a class="btn btn-danger" href="{{ url_for('edit', id=post['id']) }}">Edit</a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+</section>
+{% endblock %}
+    

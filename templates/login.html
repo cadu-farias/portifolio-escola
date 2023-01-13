@@ -1,0 +1,23 @@
+{% extends 'base.html' %} {% block content %}
+<section class="page-section portfolio" id="portfolio">
+    <div class="container">
+        <div class="card-body">
+        <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0 mt-4">{% block title %} Login {% endblock %}</h2>
+        <form method="post">
+                <label  for="title">Email:</label>
+                <br>
+                <input class="form-control" type="text" name="email" placeholder="Email" value="{{ request.form['email'] }}"></input>
+                <br>
+            
+                <label  for="content">Senha:</label>
+                <br>
+                <input class="form-control" type="password" name="senha" placeholder="senha" value="{{ request.form['senha'] }}"></input>
+                <br>
+
+                <button class="btn btn-success" type="submit">Entrar</button>
+        </form>
+    </div>
+    </div>
+    </div>
+</section>
+ {% endblock %}

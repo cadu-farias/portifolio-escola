@@ -1,0 +1,39 @@
+{% extends 'base.html' %} {% block content %}
+<section class="page-section portfolio" id="portfolio">
+    <div class="container">
+        <div class="card-body">
+            <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0 mt-4">{% block title %} Editar Perfil "{{ users['nome'] }}" {% endblock %}</h2>
+            <form method="post">
+                <label  for="content">Nome:</label>
+                <br>
+                <input class="form-control" type="text" name="nome" placeholder="Nome" value="{{ request.form['nome'] or users['nome'] }}"></input>
+                <br>
+                
+                <label  for="title">Área de atuação:</label>
+                <br>
+                <input class="form-control" type="text" name="atuacao" placeholder="Desenvolvedor Full-stack" value="{{ request.form['atuacao'] or users['atuacao'] }}"></input>
+                <br>
+            
+                <label  for="content">Nome da Rua:</label>
+                <br>
+                <input class="form-control" type="text" name="rua" placeholder="Nome da rua" value="{{ request.form['rua'] or users['endereco'].split(',')[0] }}"></input>
+                <br>
+                <label  for="content">Numero da casa:</label>
+                <br>
+                <input class="form-control" type="text" name="numero" placeholder="Nome da rua" value="{{ request.form['numero']  or users['endereco'].split(',')[1] }}"></input>
+                <br>
+                <label  for="content">Bairro:</label>
+                <br>
+                <input class="form-control" type="text" name="bairro" placeholder="Nome da rua" value="{{ request.form['bairro'] or users['endereco'].split(',')[2] }}"></input>
+                <br>
+                <label  for="content">Telefone:</label>
+                <br>
+                <input class="form-control" type="text" name="telefone" placeholder="Telefone" value="{{ request.form['telefone'] or users['telefone'] }}"></input>
+                <br>
+                
+                <button class="btn btn-success" type="submit">Enviar</button>
+            </form>
+        </div>
+    </div>
+</section>
+{% endblock %}

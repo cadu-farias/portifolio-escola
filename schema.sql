@@ -1,9 +1,22 @@
 DROP TABLE IF EXISTS users;
 
+CREATE TABLE posts (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    created TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    title TEXT NOT NULL,
+    content TEXT NOT NULL
+);
+
+
 CREATE TABLE users (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     created TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
     email TEXT NOT NULL,
     nome TEXT NOT NULL,
-    senha TEXT NOT NULL
+    senha TEXT NOT NULL,
+    atuacao TEXT,
+    endereco TEXT,
+    telefone TEXT,
+    foto TEXT
 );
+

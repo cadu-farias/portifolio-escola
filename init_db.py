@@ -9,7 +9,7 @@ with open('schema.sql') as f:
 cur = connection.cursor()
 
 cur.execute("INSERT INTO users (email, nome, senha) VALUES (?, ?, ?)",
-            ('email@gmail.com', 'Nome sobrenome', 'senha123')
+            ('carlos@gmail.com', 'Carlos Eduardo Farias da Silva', '1234')
             )
 
 connection.commit()
